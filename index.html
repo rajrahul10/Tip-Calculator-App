@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  <title>Tip Calculator App</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
 
-  Bill
+  <div class="container">
+    <img src="./images/logo.svg" alt="Logo" class="logo">
+    <div class="splitter-box">
+      <div class="box-left">
+        <div class="bill">
+          <div class="bill-label">
+            <label for="bill-amount">Bill</label>
+            <div class="error error-bill-empty hidden">Cannot be empty!</div>
+          </div>
+          <div class="bill-input-box">
+            <ion-icon name="logo-usd" class="icon"></ion-icon>
+            <input type="number" id="bill-amount" class="bill-amount" >
+          </div>
+        </div>
+        <div class="tip">
+          <div class="person-count-label">
+            <label for="bill-amount">Select Tip %</label>
+            <div class="error tip-percent-error hidden">Select one</div>
+          </div>
+          
+          <div class="tip-percent-box">
+            <div class="tip-amount tip-5">5%</div>
+            <div class="tip-amount tip-10">10%</div>
+            <div class="tip-amount tip-15">15%</div>
+            <div class="tip-amount tip-25">25%</div>
+            <div class="tip-amount tip-50">50%</div>
+            <div class="tip-amount-custom">
+              <input type="text" placeholder="Custom" class="tip-amount-input">
+            </div>
+          </div>
+        </div>
+        <div class="person-count">
+          <div class="person-count-label">
+            <label for="person-count">Number of People</label>
+            <div class="error error-person-0 hidden">Cannot be zero</div>
+          </div>
+          
+          <div class="person-input-box">
+            <ion-icon name="person-sharp" class="icon"></ion-icon>
+            <input type="number" id="person-count-input" class="person-count-input">
+          </div>
+        </div>
+      </div>
+      <div class="box-right">
+        <div class="display-content">
+          <div class="tip-amount-content">
+            <div class="tip-amount-label">Tip Amount <span class="per-person"> / Person</span> </div>
+            <div class="tip-amount-value">$0.0</div>
+          </div>
+          <div class="total-amount-content">
+            <div class="total-amount-label">Total <span class="per-person"> / Person</span> </div>
+            <div class="total-amount-value">$0.0</div>
+          </div>
+        </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <button type="reset" class="btn btn-reset">Reset</button>
+      </div>
+    </div>
   </div>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="./script.js"></script>
+
 </body>
+
 </html>
